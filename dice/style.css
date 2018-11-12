@@ -1,0 +1,161 @@
+:root{
+	--bgcolor:#eee;
+	--sccolor:#222;
+}
+
+body{
+	text-align:center;
+	margin: 0px;
+	padding: 0px;
+	background-color:var(--bgcolor);
+	overflow:hidden;
+}
+
+h2{
+	font-family:"nova mono", monospace;
+	font-size:100pt;
+	color:var(--sccolor);
+	line-height:0;
+	text-shadow: var(--sccolor) 0 0 10px; 
+	
+}
+
+.content {
+	padding: 0px;
+}
+
+span{
+	font-family:"Courier New", Courier, monospace;
+	font-size:32pt;
+	text-shadow: color:var(--sccolor); 0 0 2px;
+	color:var(--sccolor);
+}
+
+input {
+	height:45%;
+	border-width:0px;
+	border:none;
+	background-color:transparent;
+	font-size:150pt;
+	width:90%;
+	line-height:0;
+	outline:none;
+	font-family:"nova mono", monospace;
+	text-shadow: #111 0 0 5px; 
+}
+
+input:focus {
+	border:none;
+}
+
+#vh{
+	position:absolute;
+	top:50%;
+	left:15px;
+	right:15px;
+	display: block;
+	border: 0;
+	border-top: 1px solid var(--sccolor);
+	transform:translate(0,-50%);
+	opacity:0.3;
+}
+
+#ve{
+	position:absolute;
+	top:15px;
+	bottom:15px;
+	left:50%;
+	display: block;
+	border: 0;
+	border-left: 1px solid var(--sccolor);
+	transform:translate(0,0);
+	opacity:0.3;
+	
+}
+
+#d6{
+	position:absolute;
+	left:25%;
+	top:10%;
+	transform:translate(-50%,0);
+}
+	
+#d6b{
+	position:absolute;
+	top:2%;
+	left:0;
+	width:50%;
+	background-color:transparent;
+}
+
+#d6t{
+	position:absolute;
+	top:10px;
+	left:10px;
+}
+
+#d62{
+	position:absolute;
+	right:25%;
+	top:10%;
+	transform:translate(50%,0);
+}
+	
+#d6b2{
+	position:absolute;
+	top:2%;
+	right:0;
+	width:50%;
+	background-color:transparent;
+}
+
+#d6t2{
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+
+#d20{
+	position:absolute;
+	left:25%;
+	bottom:10%;
+	transform:translate(-50%,0);
+}
+	
+#d20b{
+	position:absolute;
+	bottom:2%;
+	left:0;
+	width:50%;
+	background-color:transparent;
+}
+
+#d20t{
+	position:absolute;
+	bottom:10px;
+	left:10px;
+}
+
+#d202{
+	position:absolute;
+	right:25%;
+	bottom:10%;
+	transform:translate(50%,0);
+}
+	
+#d20b2{
+	position:absolute;
+	bottom:2%;
+	right:0;
+	width:50%;
+	background-color:transparent;
+}
+
+#d20t2{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+}
+
+

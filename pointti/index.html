@@ -1,0 +1,98 @@
+
+<html>
+
+	<head>
+		<meta name="author" content="Sampo Pelto">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Minigolflaskuri</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="theme-color" content="#A5DA91">
+
+	</head>
+
+	<body>
+		<div class="header">
+			<hr>
+			<h2>MINIGOLF 2.0</h2>
+			<hr>
+			<input onclick="color('#D46A6A', '#801515')" type="button" class="button" id="red" value="Punainen">
+			<hr>
+			<input onclick="color('#A5DA91', '#2B6D12')" type="button" class="button" id="green" value="Vihreä">
+			<hr>
+			<input onclick="color('#BFB2B0', '#6F605E')" type="button" class="button" id="gray" value="Harmaa">
+			<hr>
+
+		</div>
+
+		<div id="navbar">
+			<h3 id="totalpoints">Pisteet: </h3>
+		</div>
+
+		<div class="content">
+
+<span>01: </span><input onblur="sumInputs()" maxlength="3" name="qty1" type="number" id="point" class="pointt"/><hr><hr>
+<span>02: </span><input onblur="sumInputs()" maxlength="3" name="qty2" type="number" id="point" class="pointt"/><hr><hr>
+<span>03: </span><input onblur="sumInputs()" maxlength="3" name="qty3" type="number" id="point" class="pointt"/><hr><hr>
+<span>04: </span><input onblur="sumInputs()" maxlength="3" name="qty4" type="number" id="point" class="pointt"/><hr><hr>
+<span>05: </span><input onblur="sumInputs()" maxlength="3" name="qty5" type="number" id="point" class="pointt"/><hr><hr>
+<span>06: </span><input onblur="sumInputs()" maxlength="3" name="qty6" type="number" id="point" class="pointt"/><hr><hr>
+<span>07: </span><input onblur="sumInputs()" maxlength="3" name="qty7" type="number" id="point" class="pointt"/><hr><hr>
+<span>08: </span><input onblur="sumInputs()" maxlength="3" name="qty8" type="number" id="point" class="pointt"/><hr><hr>
+<span>09: </span><input onblur="sumInputs()" maxlength="3" name="qty9" type="number" id="point" class="pointt"/><hr><hr>
+<span>10: </span><input onblur="sumInputs()" maxlength="3" name="qty10" type="number" id="point" class="pointt"/><hr><hr>
+<span>11: </span><input onblur="sumInputs()" maxlength="3" name="qty11" type="number" id="point" class="pointt"/><hr><hr>
+<span>12: </span><input onblur="sumInputs()" maxlength="3" name="qty12" type="number" id="point" class="pointt"/><hr><hr>
+<span>13: </span><input onblur="sumInputs()" maxlength="3" name="qty13" type="number" id="point" class="pointt"/><hr><hr>
+<span>14: </span><input onblur="sumInputs()" maxlength="3" name="qty14" type="number" id="point" class="pointt"/><hr><hr>
+<span>15: </span><input onblur="sumInputs()" maxlength="3" name="qty15" type="number" id="point" class="pointt"/><hr><hr>
+<span>16: </span><input onblur="sumInputs()" maxlength="3" name="qty16" type="number" id="point" class="pointt"/><hr><hr>
+<span>17: </span><input onblur="sumInputs()" maxlength="3" name="qty17" type="number" id="point" class="pointt"/><hr><hr>
+<span>18: </span><input onblur="sumInputs()" maxlength="3" name="qty18" type="number" id="point" class="pointt"/><hr><hr>
+
+		</div>
+
+	<script>
+function sumInputs() {
+    var inputs = document.getElementsByTagName('input'),
+        sum = 0;
+
+    for(var i=0; i<inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+
+    }
+
+	document.getElementById("totalpoints").innerHTML ="Pisteet: " + sum;
+}
+
+
+	function color(prim, sec) {
+		document.documentElement.style.setProperty("--prim", prim);
+		document.documentElement.style.setProperty("--sec", sec);
+		document.getElementsByTagName('meta')["theme-color"].content = prim;
+	}
+
+
+window.onscroll = function() {myFunction()};
+
+const navbar = document.getElementById("navbar");
+const sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+</script>
+
+	</body>
+
+</html>

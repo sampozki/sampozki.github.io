@@ -1,0 +1,101 @@
+:root{
+	--bgcolor:#eee;
+	--sccolor:#222;
+}
+
+body{
+	text-align:center;
+	margin: 0px;
+	padding: 0px;
+	background-color:var(--bgcolor);
+	overflow:hidden;
+}
+
+h2{
+	font-family:"nova mono", monospace;
+	font-size:150pt;
+	color:var(--sccolor);
+	line-height:0;
+	text-shadow: var(--sccolor) 0 0 10px;
+	animation: blinker 0s linear infinite;
+}
+
+.content {
+	padding: 0px;
+}
+
+span{
+	font-family:"Courier New", Courier, monospace;
+	font-size:32pt;
+	text-shadow: color:var(--sccolor); 0 0 2px;
+	color:var(--sccolor);
+}
+
+input {
+	height:45%;
+	border-width:0px;
+	border:none;
+	background-color:#eee;
+	font-size:150pt;
+	width:90%;
+	line-height:0;
+	font-family:"nova mono", monospace;
+	text-shadow: #111 0 0 5px;
+}
+
+input:focus {
+	border:none;
+}
+
+#tapbutton{
+	position:absolute;
+	bottom:0;
+	height:85%;
+	transform:translate(-50%,0);
+	border: none;
+	outline:none;
+	background-color:transparent;
+}
+
+#resetbutton{
+	position:absolute;
+	top:0;
+	height:10%;
+	transform:translate(-50%,0);
+	background-color:transparent;
+	border: none;
+	outline:none;
+}
+
+#tap{
+	position:absolute;
+	left: 0; right:0;
+	bottom:25%;
+}
+
+#reset{
+	position:absolute;
+	opacity:0.5;
+	top:2%;
+	left:0;
+	right:0;
+}
+
+hr{
+	position:absolute;
+	top:10%;
+	width:90%;
+	left:5%;
+	display: block;
+	border: 0;
+	border-top: 1px solid var(--sccolor);
+	transform:translate(0,-50%);
+	opacity:0.3;
+}
+
+@keyframes blinker {
+  0% { opacity: 0;}
+  40% { opacity: 1;}
+  100% { opacity: 1;}
+
+}
