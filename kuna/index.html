@@ -1,0 +1,50 @@
+
+
+<html>
+
+	<head>
+		<meta name="author" content="Sampo Pelto">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Kuna <-> Euro</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+	</head>
+
+	<body>
+		<div class="header">
+			<hr>
+			<h2>KUNA <-> EURO</h2>
+			<hr><hr>
+		
+		</div>
+		
+		<div class="content">
+
+<span>Kuna : </span><input onblur="change2euro()" maxlength="5" id="kuna" type="text" id="point"/><hr><hr><hr>
+<span>Euro : </span><input onblur="change2kuna()" maxlength="5" id="euro" type="text" id="point"/><hr><hr>
+
+		</div>
+	<script>
+	var bgcolor = ["#A5DA91","#FFCAAA","#BF7FAD","F1A0AD"];
+
+document.documentElement.style.setProperty("--bgcolor", bgcolor[Math.floor(Math.random() * bgcolor.length)]);
+document.documentElement.style.setProperty("--randomcolor", bgcolor[Math.floor(Math.random() * bgcolor.length)]);
+
+function change2euro() {
+    var inputs = document.getElementById('kuna');
+	
+	
+	document.getElementById("euro").value = Math.round(parseInt(inputs.value) / 7.4);
+}
+function change2kuna() {
+    var inputs = document.getElementById('euro');
+	
+	
+	document.getElementById("kuna").value = Math.round(parseInt(inputs.value) * 7.4);
+}
+</script>
+	</body>
+	
+</html>

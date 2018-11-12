@@ -1,0 +1,75 @@
+
+
+<html>
+
+	<head>
+		<meta name="author" content="Sampo Pelto">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Smoothizer</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="csshake.min.css">
+		
+	</head>
+
+	<body>
+		<div class="header">
+			<h3 class="shake shake-constant">SMOOTHIZER</h3>
+		<div class="content">
+			<h2 id="smoothie" class="shake"></h3>
+		</div>
+<script>
+var bgcolor = ["#A5DA91","#FFCAAA","#BF7FAD","F1A0AD"];
+
+document.documentElement.style.setProperty("--bgcolor", bgcolor[Math.floor(Math.random() * bgcolor.length)]);
+document.documentElement.style.setProperty("--randomcolor", bgcolor[Math.floor(Math.random() * bgcolor.length)]);
+
+
+var maidot = ["Maito","Kookosmaito","Mantelimaito","Kauramaito","Jogurtti"];
+var rasvat = ["Kookosöljy","Oliiviöljy"];
+
+var smoothieaines = ["Kurkku","Mansikka","Vadelma","Mustaherukka","Puolukka","Mustikka",
+					"Porkkana","Banaani","Ananas","Inkivääri","Appelsiini","Omena",
+					"Mango","Tomaatti","Persikka","Vesimeloni"];
+
+var aText = maidot[Math.floor(Math.random() * maidot.length)] + "<br>"+	
+			rasvat[Math.floor(Math.random() * rasvat.length)] + "<hr>"+	
+			smoothieaines.sort(() => .5 - Math.random()).slice(0,3).join("<br>");
+			
+var iSpeed = 10;
+var iIndex = 0;
+var iArrLength = aText[0].length;
+var iScrollAt = 100;
+var iTextPos = 0;
+var sContents = '';
+var iRow;
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("smoothie");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] ;
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos);
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 8);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+typewriter();
+
+</script>
+	</body>
+	
+</html>

@@ -1,0 +1,89 @@
+:root{
+	--bgcolor:#eee;
+	--randomcolor:#eee:
+}
+
+body{
+	text-align:center;
+	margin: 0px;
+    padding: 0px;
+	background-color:#eee;
+	animation:randomclr 4s infinite alternate;
+}
+
+@keyframes coloranime{
+	from{background-color:#eee}
+	to{background-color:var(--bgcolor)};
+}
+
+@keyframes randomclr{
+	from{background-color:var(--bgcolor)}
+	to{background-color:var(--randomcolor)};
+}
+
+
+h2{
+	font-family:"Raleway", sans-serif, cursive;
+	font-size:50px;
+	color:#222;
+	text-shadow: #111 0 0 2px; 
+}
+
+h3{
+	font-family:"Raleway", sans-serif, cursive;
+	font-size:60px;
+	color:#111;
+	text-shadow: #333 0 0 1px; 
+	
+}
+
+.header{
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #2B6D12;
+}
+
+#navbar h3 {
+  float: middle;
+  display: block;
+  color: #ddd;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: #ddd 0 0 2px; 
+}
+
+.content {
+  padding: 20px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  
+}
+
+.sticky + .content {
+  padding-top: 140px;
+}
+
+span{
+	font-family:"Courier New", Courier, monospace;
+	font-size:32pt;
+	text-shadow: #111 0 0 2px;
+}
+
+input {
+	height:80px;
+	border-radius: 10px;
+	background-color:#eee;
+	font-size:32pt;
+	width:200px;
+	font-family:"Raleway", sans-serif, cursive;
+}
+
+hr{
+	height:15px; visibility:hidden; margin-bottom:-1px;
+}
