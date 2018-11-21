@@ -1,0 +1,18 @@
+.content{
+    margin:auto;
+    width:80%;
+    padding:10px;
+    text-align: center;
+}
+
+h1, p {
+    font-family:"Raleway", sans-serif, cursive;
+}
+
+h1{
+    font-size:40px;
+}
+
+p{
+    font-size:20px;
+}
