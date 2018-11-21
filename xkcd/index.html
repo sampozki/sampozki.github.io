@@ -4,14 +4,44 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
+        
     </head>
     <body>
         <div class="content">
-            <h1>Otsikko</h1>
-            <b>*kuva tähän*</b>
-            <p>alt</p>
-            <p>num</p>
-            <button>random XKCD</button>
+            <h1 id="otsikko">Otsikko</h1>
+            <img id="image" src="">
+            <p id="alt">alt</p>
+            <p id="num">num</p>
+            <button id="random">Random XKCD</button>
+            
         </div>
+
+        <script>
+
+                let newestnum;
+
+                $(function(){getxkcd('https://xkcd.now.sh');});
+
+                $('#random').click(function(){
+                    let randomxkcd = Math.floor(Math.random() * newestnum) + 1;
+                    getxkcd('https://xkcd.now.sh/' + randomxkcd);
+                });
+                
+                function getxkcd(url){
+                    $.get(url, function(data){
+                        //console.log(data);
+                        $('#otsikko').text(data.title);
+                        $('#alt').text(data.alt);
+                        $('#num').text('Num: ' + data.num);
+                        $('#image').attr('src', data.img);
+                        $('image').attr('alt', data.alt);
+                        newestnum = data.num;
+                        
+                    });
+                };
+
+        </script>
+
+
     </body>
 </html>
