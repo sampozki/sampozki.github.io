@@ -1,6 +1,6 @@
 .content{
     margin:auto;
-    width:80%;
+    width:90%;
     padding:10px;
     text-align: center;
 }
@@ -17,9 +17,14 @@ p{
     font-size:20px;
 }
 
+#image {
+    max-width: 90%;
+}
+
 button{
     background-color:#FFF;
-    border:1px black;
-    height:30px;
-    font-size:18px;
+    border:1px dashed black;
+    height:80px;
+    width:400px;
+    font-size:30px;
 }
