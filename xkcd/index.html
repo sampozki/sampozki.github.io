@@ -1,44 +1,55 @@
 <html>
     <head>
         <title>XKCD viewer</title>
+        <meta name="author" content="Sampo Pelto">
+        <meta charset="UTF-8">
+        <meta keywords="xkcd">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
-        
     </head>
+
     <body>
         <div class="content">
+            <button id="random">Random XKCD</button>
             <h1 id="otsikko">Otsikko</h1>
             <img id="image" src="">
             <p id="alt">alt</p>
             <p id="num">num</p>
-            <button id="random">Random XKCD</button>
-            
         </div>
 
+        <noscript>You're gonna need to enable scripts ;_;</noscript>
+
         <script>
+            let newestnum;
 
-                let newestnum;
+            $(function(){
+                getxkcd('https://xkcd.now.sh');
+                $.get('https://xkcd.now.sh', function(data){
+                    newestnum=data.num;
+                });    
+            });
 
-                $(function(){getxkcd('https://xkcd.now.sh');});
-
-                $('#random').click(function(){
-                    let randomxkcd = Math.floor(Math.random() * newestnum) + 1;
-                    getxkcd('https://xkcd.now.sh/' + randomxkcd);
-                });
+            $('#random').click(function(){
+                let randomxkcd = Math.floor(Math.random() * newestnum) + 1;
+                getxkcd('https://xkcd.now.sh/' + randomxkcd);
+            });
                 
-                function getxkcd(url){
-                    $.get(url, function(data){
-                        //console.log(data);
-                        $('#otsikko').text(data.title);
-                        $('#alt').text(data.alt);
-                        $('#num').text('Num: ' + data.num);
+            function getxkcd(url){
+                $.get(url, function(data){
+                    //console.log(data);
+                    $('#otsikko').text(data.title);
+                    $('#alt').text(data.alt);
+                    $('#num').text('Num: ' + data.num);
+                    $('#image').attr('alt', data.alt);
+                    if(data.imgRetina){
+                        $('#image').attr('src', data.imgRetina);
+                    } else{
                         $('#image').attr('src', data.img);
-                        $('image').attr('alt', data.alt);
-                        newestnum = data.num;
-                        
-                    });
-                };
+                    }
+                });
+            };
 
         </script>
 
