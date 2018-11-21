@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
+        
     </head>
 
     <body>
@@ -20,39 +21,7 @@
         </div>
 
         <noscript>You're gonna need to enable scripts ;_;</noscript>
-
-        <script>
-            let newestnum;
-
-            $(function(){
-                getxkcd('https://xkcd.now.sh');
-                $.get('https://xkcd.now.sh', function(data){
-                    newestnum=data.num;
-                });    
-            });
-
-            $('#random').click(function(){
-                let randomxkcd = Math.floor(Math.random() * newestnum) + 1;
-                getxkcd('https://xkcd.now.sh/' + randomxkcd);
-            });
-                
-            function getxkcd(url){
-                $.get(url, function(data){
-                    //console.log(data);
-                    $('#otsikko').text(data.title);
-                    $('#alt').text(data.alt);
-                    $('#num').text('Num: ' + data.num);
-                    $('#image').attr('alt', data.alt);
-                    if(data.imgRetina){
-                        $('#image').attr('src', data.imgRetina);
-                    } else{
-                        $('#image').attr('src', data.img);
-                    }
-                });
-            };
-
-        </script>
-
+        <script src="script.js" type="text/javascript"></script>
 
     </body>
 </html>
