@@ -1,6 +1,5 @@
 .content{
     margin:auto;
-    padding:10px;
     width: 95vw;
     text-align: center;
 }
@@ -23,7 +22,7 @@ p{
 
 button{
     background-color:#FFF;
-    border:1px dashed black;
+    border:1px solid black;
     height:80px;
     width:400px;
     font-size:30px;
