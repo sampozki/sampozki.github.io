@@ -24,6 +24,12 @@ button{
     background-color:#FFF;
     border:1px solid black;
     height:80px;
-    width:400px;
+    width:30vw;
     font-size:30px;
+}
+
+#prev, #next {
+    width: 20vw;
+    margin-left:20px;
+    margin-right: 20px;
 }
