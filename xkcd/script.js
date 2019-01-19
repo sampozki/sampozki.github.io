@@ -3,11 +3,11 @@ let currentnum;
 
 $(function(){
     getxkcd('https://xkcd.now.sh');
-    
+
     $.get('https://xkcd.now.sh', function(data){
         newestnum=data.num;
         $('#next').css('color','#DDD')
-    });    
+    });
 });
 
 $('#random').click(function(){
@@ -28,7 +28,7 @@ $('#prev').click(function(){
         getxkcd('https://xkcd.now.sh/' + currentnum);
     }
 });
-    
+
 function getxkcd(url){
     $.get(url, function(data){
         //console.log(data);
@@ -42,6 +42,7 @@ function getxkcd(url){
             $('#image').attr('src', data.img);
         }
         currentnum=data.num;
+        history.replaceState('','','/' + currentnum);
         if(currentnum === newestnum){
             $('#next').css('color','#DDD')
         }else{
