@@ -42,7 +42,7 @@ function getxkcd(url){
             $('#image').attr('src', data.img);
         }
         currentnum=data.num;
-        history.replaceState('','','/' + currentnum);
+        history.replaceState('','','/xkcd/' + currentnum);
         if(currentnum === newestnum){
             $('#next').css('color','#DDD')
         }else{
